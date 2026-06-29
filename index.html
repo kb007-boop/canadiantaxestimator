@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canadian Income Tax Calculator 2024 | Free Federal + Provincial | TaxClear</title>
+<meta name="description" content="Calculate your 2024 Canadian income tax in seconds. Free federal + provincial income tax estimator for all provinces and territories. Includes CPP, EI, RRSP deductions, effective rate, and marginal rate. No signup required.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://canadiantaxestimator.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canadiantaxestimator.com/">
+<meta property="og:title" content="Canadian Income Tax Calculator 2024 | TaxClear">
+<meta property="og:description" content="Free 2024 Canadian income tax estimator for all provinces and territories. Calculate federal + provincial tax, CPP, EI, and RRSP savings instantly. No signup.">
+<meta property="og:site_name" content="TaxClear Canada">
+<meta property="og:locale" content="en_CA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Canadian Income Tax Calculator 2024 | TaxClear">
+<meta name="twitter:description" content="Free 2024 Canadian income tax estimator for all provinces. Calculate federal + provincial tax, CPP, EI, and RRSP savings instantly.">
+
+<!-- Structured Data: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "TaxClear — Canadian Income Tax Calculator",
+  "url": "https://canadiantaxestimator.com/",
+  "description": "Free 2024 Canadian income tax calculator covering all provinces and territories. Calculates federal and provincial income tax, CPP contributions, EI premiums, RRSP deductions, effective rate, and marginal rate.",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CAD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "TaxClear Canada",
+    "url": "https://canadiantaxestimator.com/"
+  },
+  "featureList": [
+    "2024 federal tax brackets",
+    "All 10 provincial tax brackets",
+    "CPP and EI contribution calculation",
+    "RRSP deduction and optimization",
+    "Effective and marginal tax rate",
+    "Capital gains inclusion calculation"
+  ]
+}
+</script>
+
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate Canadian income tax for 2024?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Canadian income tax uses a progressive bracket system. You pay federal tax on your net income using CRA's 2024 federal brackets (15%–33%), plus provincial or territorial tax based on where you live. Enter your income, deductions, and province into TaxClear's free calculator for an instant estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the federal basic personal amount for 2024?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2024 federal basic personal amount (BPA) is $15,705. This non-refundable tax credit reduces your federal income tax by 15% × $15,705 = $2,355.75."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can I contribute to my RRSP in 2024?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2024 RRSP contribution limit is 18% of your previous year's earned income, up to a maximum of $31,560, plus any unused contribution room carried forward from prior years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the 2024 federal income tax brackets in Canada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2024 federal income tax brackets are: 15% on the first $55,867; 20.5% on $55,867–$111,733; 26% on $111,733–$154,906; 29% on $154,906–$220,000; and 33% on income over $220,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between effective tax rate and marginal tax rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your effective tax rate is the average rate paid across all your income (total tax ÷ total income). Your marginal tax rate is the rate on each additional dollar you earn. The marginal rate determines exactly how much you save with an RRSP contribution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this calculator include CPP and EI deductions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. TaxClear automatically calculates 2024 CPP contributions (5.95% on employment earnings between $3,500 and $68,500) and EI premiums (1.66% on insurable earnings up to $63,200)."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --maple: #D1362F;
+  --maple-dark: #A52B25;
+  --bg: #FAFAFA;
+  --white: #FFFFFF;
+  --navy: #0A1628;
+  --slate: #1E3A5F;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --green: #15803D;
+  --amber: #D97706;
+  --surface: #F3F4F6;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--navy); }
+
+/* NAV */
+nav { background: var(--navy); padding: 0 40px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: white; display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.maple-leaf { color: var(--maple); font-size: 22px; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: #8A9BB0; font-size: 14px; text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: white; }
+
+/* HERO */
+.hero { background: var(--navy); padding: 56px 40px 72px; text-align: center; }
+.hero-eyebrow { display: inline-block; background: rgba(209,54,47,0.15); border: 1px solid rgba(209,54,47,0.3); color: var(--maple); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 56px); font-weight: 800; color: white; line-height: 1.1; max-width: 700px; margin: 0 auto 16px; }
+.hero h1 span { color: var(--maple); }
+.hero p { color: #8A9BB0; font-size: 17px; max-width: 500px; margin: 0 auto 32px; line-height: 1.6; }
+.hero-stats { display: flex; justify-content: center; gap: 48px; }
+.hero-stat-val { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: white; }
+.hero-stat-label { font-size: 12px; color: #8A9BB0; margin-top: 2px; }
+
+/* MAIN LAYOUT */
+.main { max-width: 1100px; margin: -32px auto 0; padding: 0 20px 80px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
+@media(max-width: 768px) { .main { grid-template-columns: 1fr; margin-top: 0; } }
+
+.panel { background: white; border-radius: 20px; padding: 32px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.panel-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
+.panel-icon { font-size: 22px; }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 12px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.input-wrap { position: relative; }
+.input-wrap span.prefix { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--muted); font-weight: 500; pointer-events: none; }
+.input-wrap input, .input-wrap select { width: 100%; padding: 12px 14px 12px 28px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: 'Source Sans 3', sans-serif; color: var(--navy); background: var(--bg); transition: border-color 0.2s; }
+.input-wrap.no-prefix input, .input-wrap.no-prefix select { padding-left: 14px; }
+.input-wrap input:focus, .input-wrap select:focus { outline: none; border-color: var(--maple); background: white; }
+
+.province-select { width: 100%; padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 10px; font-size: 15px; font-family: 'Source Sans 3', sans-serif; color: var(--navy); background: var(--bg); }
+.province-select:focus { outline: none; border-color: var(--maple); }
+
+.section-divider { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--maple); margin: 24px 0 16px; }
+
+.calc-btn { width: 100%; padding: 16px; background: var(--maple); color: white; font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+.calc-btn:hover { background: var(--maple-dark); }
+
+/* RESULTS PANEL */
+.results-panel { display: flex; flex-direction: column; gap: 20px; }
+
+.tax-breakdown { background: var(--navy); border-radius: 16px; padding: 28px; color: white; }
+.tax-breakdown h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: #8A9BB0; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; }
+.tax-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 14px; }
+.tax-row:last-child { border-bottom: none; }
+.tax-row-label { color: #8A9BB0; }
+.tax-row-val { font-weight: 600; font-variant-numeric: tabular-nums; }
+.tax-row-val.deduction { color: #4ADE80; }
+.tax-row-val.tax { color: #F87171; }
+.tax-row.total { margin-top: 8px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.15); border-bottom: none; }
+.tax-row.total .tax-row-label { color: white; font-weight: 700; font-size: 16px; }
+.tax-row.total .tax-row-val { font-size: 22px; font-family: 'Syne', sans-serif; color: #FBBF24; }
+
+.rate-card { background: white; border: 1.5px solid var(--border); border-radius: 16px; padding: 24px; }
+.rate-card h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+.rate-bars { display: flex; flex-direction: column; gap: 10px; }
+.rate-bar-row { font-size: 13px; }
+.rate-bar-label { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.rate-bar-label span:last-child { font-weight: 600; color: var(--navy); }
+.rate-bar-track { background: var(--surface); border-radius: 100px; height: 8px; overflow: hidden; }
+.rate-bar-fill { height: 100%; border-radius: 100px; background: var(--maple); transition: width 0.6s ease; }
+.rate-bar-fill.federal { background: var(--slate); }
+
+.rrsp-card { background: linear-gradient(135deg, #15803D, #166534); border-radius: 16px; padding: 24px; color: white; }
+.rrsp-card h3 { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+.rrsp-card p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+.rrsp-stat { display: flex; justify-content: space-between; background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 16px; margin-bottom: 8px; font-size: 14px; }
+.rrsp-stat span:last-child { font-weight: 700; font-family: 'Syne', sans-serif; }
+
+/* AD */
+.ad-slot { max-width: 1100px; margin: 0 auto 24px; padding: 0 20px; }
+.ad-inner { background: var(--surface); border: 2px dashed var(--border); border-radius: 8px; padding: 20px; text-align: center; color: var(--muted); font-size: 12px; }
+
+/* FAQ SECTION */
+.faq-section { background: white; border-top: 1px solid var(--border); padding: 64px 20px; }
+.faq-inner { max-width: 820px; margin: 0 auto; }
+.faq-inner h2 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.faq-inner > p { color: var(--muted); font-size: 16px; margin-bottom: 40px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.faq-item p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+.faq-item strong { color: var(--navy); }
+
+/* BRACKETS TABLE */
+.brackets-section { background: var(--surface); padding: 48px 20px; }
+.brackets-inner { max-width: 820px; margin: 0 auto; }
+.brackets-inner h2 { font-family: 'Syne', sans-serif; font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 24px; }
+.brackets-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.brackets-table th { background: var(--navy); color: white; padding: 10px 16px; text-align: left; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.5px; }
+.brackets-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); background: white; }
+.brackets-table tr:last-child td { border-bottom: none; }
+.rate-chip { display: inline-block; background: rgba(209,54,47,0.1); color: var(--maple); font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+
+footer { background: var(--navy); color: #4B5E74; font-size: 12px; text-align: center; padding: 32px 20px; }
+footer p { margin-bottom: 8px; line-height: 1.6; }
+footer p:last-child { margin-bottom: 0; }
+footer a { color: #8A9BB0; text-decoration: none; }
+footer a:hover { color: white; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Main navigation">
+    <a href="https://canadiantaxestimator.com/" class="logo"><span class="maple-leaf" aria-hidden="true">🍁</span>TaxClear Canada</a>
+    <div class="nav-links">
+      <a href="#rrsp-optimizer">RRSP Calculator</a>
+      <a href="#faq">Tax FAQ</a>
+      <a href="#brackets">2024 Brackets</a>
+    </div>
+  </nav>
+</header>
+
+<div class="hero">
+  <p class="hero-eyebrow">2024 Tax Year · All Provinces &amp; Territories</p>
+  <h1>Your Canadian tax bill, <span>instantly calculated</span></h1>
+  <p>Federal + provincial tax, CPP/EI deductions, RRSP savings, and your effective rate — all in one place. Updated for 2024.</p>
+  <div class="hero-stats" aria-label="Calculator highlights">
+    <div><div class="hero-stat-val">13</div><div class="hero-stat-label">Provinces &amp; Territories</div></div>
+    <div><div class="hero-stat-val">2024</div><div class="hero-stat-label">Tax Year Brackets</div></div>
+    <div><div class="hero-stat-val">100%</div><div class="hero-stat-label">Free — No Signup</div></div>
+  </div>
+</div>
+
+<main>
+  <div class="main" id="calculator" aria-label="Tax calculator">
+    <div class="panel">
+      <div class="panel-title"><span class="panel-icon" aria-hidden="true">🧾</span>Your Tax Information</div>
+
+      <div class="field">
+        <label for="province">Province / Territory</label>
+        <select class="province-select" id="province" aria-label="Select province or territory">
+          <option value="ON">Ontario</option>
+          <option value="BC">British Columbia</option>
+          <option value="AB">Alberta</option>
+          <option value="QC">Québec</option>
+          <option value="SK">Saskatchewan</option>
+          <option value="MB">Manitoba</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland &amp; Labrador</option>
+          <option value="PE">PEI</option>
+        </select>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="employment">Employment Income</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="employment" type="number" value="95000" min="0" aria-label="Employment income in dollars"></div>
+        </div>
+        <div class="field">
+          <label for="selfemploy">Self-Employment Income</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="selfemploy" type="number" value="0" min="0" aria-label="Self-employment income in dollars"></div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="investment">Investment Income</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="investment" type="number" value="0" min="0" aria-label="Investment income in dollars"></div>
+        </div>
+        <div class="field">
+          <label for="capgains">Capital Gains</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="capgains" type="number" value="0" min="0" aria-label="Capital gains in dollars"></div>
+        </div>
+      </div>
+
+      <div class="section-divider">Deductions</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="rrsp">RRSP Contribution</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="rrsp" type="number" value="10000" min="0" aria-label="RRSP contribution in dollars"></div>
+        </div>
+        <div class="field">
+          <label for="dues">Union / Professional Dues</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="dues" type="number" value="0" min="0" aria-label="Union or professional dues in dollars"></div>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="childcare">Childcare Expenses</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="childcare" type="number" value="0" min="0" aria-label="Childcare expenses in dollars"></div>
+        </div>
+        <div class="field">
+          <label for="moving">Moving Expenses</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">$</span><input id="moving" type="number" value="0" min="0" aria-label="Moving expenses in dollars"></div>
+        </div>
+      </div>
+
+      <div class="section-divider">Credits</div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="status">Filing Status</label>
+          <div class="input-wrap no-prefix">
+            <select id="status" aria-label="Filing status">
+              <option>Single</option>
+              <option>Married / Common-Law</option>
+              <option>Single Parent</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="age">Age</label>
+          <div class="input-wrap"><span class="prefix" aria-hidden="true">#</span><input id="age" type="number" value="35" min="18" max="100" aria-label="Your age"></div>
+        </div>
+      </div>
+
+      <button class="calc-btn" onclick="calculateTax()" aria-label="Calculate my 2024 Canadian income tax">Calculate My 2024 Tax →</button>
+    </div>
+
+    <div class="results-panel" aria-live="polite" aria-label="Tax calculation results">
+      <div class="tax-breakdown" id="tax-breakdown">
+        <h3>Tax Summary</h3>
+        <div class="tax-row"><span class="tax-row-label">Total income</span><span class="tax-row-val" id="r-total-income">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Total deductions</span><span class="tax-row-val deduction" id="r-deductions">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Net income</span><span class="tax-row-val" id="r-net">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Federal tax</span><span class="tax-row-val tax" id="r-fed">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Provincial tax</span><span class="tax-row-val tax" id="r-prov">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">CPP contributions</span><span class="tax-row-val tax" id="r-cpp">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">EI premiums</span><span class="tax-row-val tax" id="r-ei">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Basic personal credit</span><span class="tax-row-val deduction" id="r-bpa">—</span></div>
+        <div class="tax-row total"><span class="tax-row-label">Total tax owing</span><span class="tax-row-val" id="r-total-tax">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">After-tax income</span><span class="tax-row-val deduction" id="r-after">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Effective rate</span><span class="tax-row-val" id="r-rate">—</span></div>
+        <div class="tax-row"><span class="tax-row-label">Marginal rate</span><span class="tax-row-val" id="r-marginal">—</span></div>
+      </div>
+
+      <div class="rate-card">
+        <h3>Tax Rate Breakdown</h3>
+        <div class="rate-bars" id="rate-bars">
+          <div class="rate-bar-row"><div class="rate-bar-label"><span style="color:var(--muted)">Federal tax</span><span id="rb-fed">—</span></div><div class="rate-bar-track"><div class="rate-bar-fill federal" id="rb-fed-bar" style="width:0%"></div></div></div>
+          <div class="rate-bar-row"><div class="rate-bar-label"><span style="color:var(--muted)">Provincial tax</span><span id="rb-prov">—</span></div><div class="rate-bar-track"><div class="rate-bar-fill" id="rb-prov-bar" style="width:0%"></div></div></div>
+          <div class="rate-bar-row"><div class="rate-bar-label"><span style="color:var(--muted)">CPP + EI</span><span id="rb-payroll">—</span></div><div class="rate-bar-track"><div class="rate-bar-fill" id="rb-payroll-bar" style="width:0%;background:#D97706"></div></div></div>
+        </div>
+      </div>
+
+      <div class="rrsp-card" id="rrsp-optimizer">
+        <h3>RRSP Optimization</h3>
+        <p>Based on your income, here's your RRSP impact for 2024.</p>
+        <div class="rrsp-stat"><span>Your 2024 RRSP room</span><span id="rrsp-room">—</span></div>
+        <div class="rrsp-stat"><span>Tax saved by RRSP</span><span id="rrsp-tax-saved">—</span></div>
+        <div class="rrsp-stat"><span>Max additional contribution</span><span id="rrsp-max">—</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ad-slot"><div class="ad-inner">Advertisement — Google AdSense 970×90</div></div>
+
+  <!-- 2024 Federal Tax Brackets Reference -->
+  <section class="brackets-section" id="brackets" aria-label="2024 Canadian federal tax brackets">
+    <div class="brackets-inner">
+      <h2>2024 Canadian Federal Income Tax Brackets</h2>
+      <table class="brackets-table" aria-label="Federal income tax brackets for 2024">
+        <thead>
+          <tr>
+            <th>Taxable Income</th>
+            <th>Federal Tax Rate</th>
+            <th>Tax on This Bracket</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>$0 – $55,867</td><td><span class="rate-chip">15%</span></td><td>Up to $8,380</td></tr>
+          <tr><td>$55,867 – $111,733</td><td><span class="rate-chip">20.5%</span></td><td>Up to $11,452</td></tr>
+          <tr><td>$111,733 – $154,906</td><td><span class="rate-chip">26%</span></td><td>Up to $11,225</td></tr>
+          <tr><td>$154,906 – $220,000</td><td><span class="rate-chip">29%</span></td><td>Up to $18,878</td></tr>
+          <tr><td>Over $220,000</td><td><span class="rate-chip">33%</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq" aria-label="Frequently asked questions about Canadian income tax">
+    <div class="faq-inner">
+      <h2>Canadian Income Tax — FAQ</h2>
+      <p>Common questions about calculating your 2024 federal and provincial taxes in Canada.</p>
+
+      <div class="faq-item">
+        <h3>How is Canadian income tax calculated for 2024?</h3>
+        <p>Canada uses a <strong>progressive marginal tax system</strong>. You pay a lower rate on the first dollars earned and a higher rate on dollars above each bracket threshold. Your total tax bill combines federal income tax (set by CRA) and provincial or territorial income tax (set by your province). On top of that, employees pay <strong>CPP contributions</strong> and <strong>EI premiums</strong> on employment income. Enter your numbers above and TaxClear will break it all down instantly.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the 2024 basic personal amount?</h3>
+        <p>The <strong>2024 federal basic personal amount (BPA) is $15,705</strong>. Every Canadian resident can claim this as a non-refundable tax credit, reducing federal tax by <strong>$2,355.75</strong> (15% × $15,705). Each province also has its own basic personal amount applied against provincial tax.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How much RRSP room do I have for 2024?</h3>
+        <p>Your <strong>2024 RRSP contribution limit</strong> is 18% of your 2023 earned income, up to a maximum of <strong>$31,560</strong>, plus any unused room carried forward from previous years. RRSP contributions reduce your net income dollar-for-dollar, generating a tax refund at your marginal rate — the most powerful tax-reduction tool available to most Canadians.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What are the 2024 CPP and EI rates?</h3>
+        <p>For 2024, the <strong>CPP contribution rate is 5.95%</strong> on employment earnings between the basic exemption of $3,500 and the maximum pensionable earnings of $68,500 — a maximum employee contribution of <strong>$3,867.50</strong>. The <strong>EI premium rate is 1.66%</strong> on insurable earnings up to $63,200 — a maximum of <strong>$1,049.12</strong>.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is the difference between effective rate and marginal rate?</h3>
+        <p>Your <strong>effective tax rate</strong> is the percentage of your total income paid in combined taxes — a useful benchmark for year-over-year comparison. Your <strong>marginal tax rate</strong> is the rate applied to your next dollar of income, combining federal and provincial brackets. The marginal rate is what matters most for financial decisions like RRSP contributions, capital gains timing, and salary vs. dividend planning.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How are capital gains taxed in Canada in 2024?</h3>
+        <p>Capital gains are only <strong>50% included in your taxable income</strong> (the "inclusion rate"). For example, a $10,000 capital gain adds $5,000 to your net income, which is then taxed at your marginal rate. Enter your capital gains in the calculator above — TaxClear applies the correct 50% inclusion automatically.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is this calculator accurate for all Canadian provinces?</h3>
+        <p>TaxClear covers all <strong>10 provinces</strong> — Ontario, British Columbia, Alberta, Québec, Saskatchewan, Manitoba, Nova Scotia, New Brunswick, Newfoundland &amp; Labrador, and Prince Edward Island — using 2024 bracket rates. The estimates are for planning purposes; consult a CPA or use NETFILE-certified software for your official CRA return.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>
+    <a href="https://canadiantaxestimator.com/">TaxClear Canada</a> &nbsp;·&nbsp;
+    <a href="#calculator">Tax Calculator</a> &nbsp;·&nbsp;
+    <a href="#brackets">2024 Brackets</a> &nbsp;·&nbsp;
+    <a href="#faq">FAQ</a> &nbsp;·&nbsp;
+    <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#">Disclaimer</a>
+  </p>
+  <p>TaxClear uses 2024 federal and provincial tax brackets for estimation purposes only. This is not tax advice. Consult a CPA for your actual return.</p>
+  <p>© 2024 TaxClear Canada &nbsp;·&nbsp; canadiantaxestimator.com</p>
+</footer>
+
+<script>
+// 2024 Federal brackets (approximate)
+const FED_BRACKETS = [
+  { min: 0, max: 55867, rate: 0.15 },
+  { min: 55867, max: 111733, rate: 0.205 },
+  { min: 111733, max: 154906, rate: 0.26 },
+  { min: 154906, max: 220000, rate: 0.29 },
+  { min: 220000, max: Infinity, rate: 0.33 }
+];
+const FED_BPA = 15705;
+
+const PROV_BRACKETS = {
+  ON: [{ min:0, max:51446, rate:0.0505 }, { min:51446, max:102894, rate:0.0915 }, { min:102894, max:150000, rate:0.1116 }, { min:150000, max:220000, rate:0.1216 }, { min:220000, max:Infinity, rate:0.1316 }],
+  BC: [{ min:0, max:45654, rate:0.0506 }, { min:45654, max:91310, rate:0.077 }, { min:91310, max:104835, rate:0.105 }, { min:104835, max:127299, rate:0.1229 }, { min:127299, max:172602, rate:0.147 }, { min:172602, max:240716, rate:0.168 }, { min:240716, max:Infinity, rate:0.205 }],
+  AB: [{ min:0, max:148269, rate:0.10 }, { min:148269, max:177922, rate:0.12 }, { min:177922, max:237230, rate:0.13 }, { min:237230, max:355845, rate:0.14 }, { min:355845, max:Infinity, rate:0.15 }],
+  QC: [{ min:0, max:51780, rate:0.14 }, { min:51780, max:103545, rate:0.19 }, { min:103545, max:126000, rate:0.24 }, { min:126000, max:Infinity, rate:0.2575 }],
+  SK: [{ min:0, max:49720, rate:0.105 }, { min:49720, max:142058, rate:0.125 }, { min:142058, max:Infinity, rate:0.145 }],
+  MB: [{ min:0, max:36842, rate:0.108 }, { min:36842, max:79625, rate:0.1275 }, { min:79625, max:Infinity, rate:0.174 }],
+  NS: [{ min:0, max:29590, rate:0.0879 }, { min:29590, max:59180, rate:0.1495 }, { min:59180, max:93000, rate:0.1667 }, { min:93000, max:150000, rate:0.175 }, { min:150000, max:Infinity, rate:0.21 }],
+  NB: [{ min:0, max:44887, rate:0.094 }, { min:44887, max:89775, rate:0.14 }, { min:89775, max:145955, rate:0.16 }, { min:145955, max:Infinity, rate:0.195 }],
+  NL: [{ min:0, max:43198, rate:0.087 }, { min:43198, max:86395, rate:0.145 }, { min:86395, max:154244, rate:0.158 }, { min:154244, max:215943, rate:0.178 }, { min:215943, max:275870, rate:0.198 }, { min:275870, max:Infinity, rate:0.208 }],
+  PE: [{ min:0, max:32656, rate:0.098 }, { min:32656, max:64313, rate:0.138 }, { min:64313, max:105000, rate:0.167 }, { min:105000, max:140000, rate:0.18 }, { min:140000, max:Infinity, rate:0.185 }],
+};
+
+function calcBracketTax(income, brackets) {
+  let tax = 0;
+  for (const b of brackets) {
+    if (income <= b.min) break;
+    const taxable = Math.min(income, b.max) - b.min;
+    tax += taxable * b.rate;
+  }
+  return tax;
+}
+
+function getMarginal(income, brackets) {
+  for (let i = brackets.length - 1; i >= 0; i--) {
+    if (income > brackets[i].min) return brackets[i].rate;
+  }
+  return brackets[0].rate;
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-CA'); }
+
+function calculateTax() {
+  const prov = document.getElementById('province').value;
+  const employ = +document.getElementById('employment').value || 0;
+  const self = +document.getElementById('selfemploy').value || 0;
+  const invest = +document.getElementById('investment').value || 0;
+  const capgains = +document.getElementById('capgains').value || 0;
+  const rrsp = +document.getElementById('rrsp').value || 0;
+  const dues = +document.getElementById('dues').value || 0;
+  const childcare = +document.getElementById('childcare').value || 0;
+  const moving = +document.getElementById('moving').value || 0;
+  const age = +document.getElementById('age').value || 35;
+
+  const totalIncome = employ + self + invest + capgains * 0.5;
+  const totalDeductions = rrsp + dues + childcare + moving;
+  const netIncome = Math.max(0, totalIncome - totalDeductions);
+
+  // CPP 2024: 5.95% on earnings between $3,500 and $68,500
+  const cpp = Math.min(Math.max(employ - 3500, 0), 68500 - 3500) * 0.0595;
+  // EI 2024: 1.66% on insurable earnings up to $63,200
+  const ei = Math.min(employ, 63200) * 0.0166;
+
+  const fedBPA = FED_BPA;
+  let fedTax = calcBracketTax(netIncome, FED_BRACKETS) - fedBPA * 0.15;
+  fedTax = Math.max(0, fedTax);
+
+  const provBrackets = PROV_BRACKETS[prov] || PROV_BRACKETS.ON;
+  const provBPA = 11865;
+  let provTax = calcBracketTax(netIncome, provBrackets) - provBPA * (provBrackets[0]?.rate || 0.05);
+  provTax = Math.max(0, provTax);
+
+  const totalTax = fedTax + provTax + cpp + ei;
+  const afterTax = totalIncome - totalTax;
+  const effectiveRate = totalIncome > 0 ? totalTax / totalIncome : 0;
+  const fedMarginal = getMarginal(netIncome, FED_BRACKETS);
+  const provMarginal = getMarginal(netIncome, provBrackets);
+  const marginalRate = fedMarginal + provMarginal;
+
+  const rrspRoom = Math.min(totalIncome * 0.18, 31560);
+  const rrspTaxSaved = rrsp * marginalRate;
+  const rrspMax = Math.max(0, rrspRoom - rrsp);
+
+  document.getElementById('r-total-income').textContent = fmt(totalIncome);
+  document.getElementById('r-deductions').textContent = '−' + fmt(totalDeductions);
+  document.getElementById('r-net').textContent = fmt(netIncome);
+  document.getElementById('r-fed').textContent = fmt(fedTax);
+  document.getElementById('r-prov').textContent = fmt(provTax);
+  document.getElementById('r-cpp').textContent = fmt(cpp);
+  document.getElementById('r-ei').textContent = fmt(ei);
+  document.getElementById('r-bpa').textContent = '−' + fmt(fedBPA * 0.15);
+  document.getElementById('r-total-tax').textContent = fmt(totalTax);
+  document.getElementById('r-after').textContent = fmt(afterTax);
+  document.getElementById('r-rate').textContent = (effectiveRate * 100).toFixed(1) + '%';
+  document.getElementById('r-marginal').textContent = (marginalRate * 100).toFixed(1) + '%';
+
+  const fedPct = totalIncome > 0 ? fedTax / totalIncome * 100 : 0;
+  const provPct = totalIncome > 0 ? provTax / totalIncome * 100 : 0;
+  const payPct = totalIncome > 0 ? (cpp + ei) / totalIncome * 100 : 0;
+
+  document.getElementById('rb-fed').textContent = fedPct.toFixed(1) + '%';
+  document.getElementById('rb-prov').textContent = provPct.toFixed(1) + '%';
+  document.getElementById('rb-payroll').textContent = payPct.toFixed(1) + '%';
+  document.getElementById('rb-fed-bar').style.width = Math.min(fedPct * 3, 100) + '%';
+  document.getElementById('rb-prov-bar').style.width = Math.min(provPct * 3, 100) + '%';
+  document.getElementById('rb-payroll-bar').style.width = Math.min(payPct * 3, 100) + '%';
+
+  document.getElementById('rrsp-room').textContent = fmt(rrspRoom);
+  document.getElementById('rrsp-tax-saved').textContent = fmt(rrspTaxSaved);
+  document.getElementById('rrsp-max').textContent = fmt(rrspMax);
+}
+
+calculateTax();
+</script>
+</body>
+</html>
