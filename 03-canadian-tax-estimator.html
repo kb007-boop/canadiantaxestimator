@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaxClear Canada — Free 2024 Tax Estimator</title>
+<title>TaxClear Canada — Free 2026 Tax Estimator</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -116,12 +116,12 @@ footer a { color: #8A9BB0; text-decoration: none; }
 </nav>
 
 <div class="hero">
-  <div class="hero-eyebrow">2024 Tax Year · All Provinces</div>
+  <div class="hero-eyebrow">2026 Tax Year · All Provinces</div>
   <h1>Your Canadian tax bill, <span>instantly calculated</span></h1>
-  <p>Federal + provincial tax, CPP/EI deductions, RRSP savings, and your effective rate — all in one place. Updated for 2024.</p>
+  <p>Federal + provincial tax, CPP/EI deductions, RRSP savings, and your effective rate — all in one place. Updated for 2026.</p>
   <div class="hero-stats">
     <div><div class="hero-stat-val">13</div><div class="hero-stat-label">Provinces & Territories</div></div>
-    <div><div class="hero-stat-val">2024</div><div class="hero-stat-label">Tax Year Brackets</div></div>
+    <div><div class="hero-stat-val">2026</div><div class="hero-stat-label">Tax Year Brackets</div></div>
     <div><div class="hero-stat-val">100%</div><div class="hero-stat-label">Free — No Signup</div></div>
   </div>
 </div>
@@ -211,7 +211,7 @@ footer a { color: #8A9BB0; text-decoration: none; }
       </div>
     </div>
 
-    <button class="calc-btn" onclick="calculateTax()">Calculate My 2024 Tax →</button>
+    <button class="calc-btn" onclick="calculateTax()">Calculate My 2026 Tax →</button>
   </div>
 
   <div class="results-panel">
@@ -242,8 +242,8 @@ footer a { color: #8A9BB0; text-decoration: none; }
 
     <div class="rrsp-card">
       <h3>💡 RRSP Optimization</h3>
-      <p>Based on your income, here's your RRSP impact for 2024.</p>
-      <div class="rrsp-stat"><span>Your 2024 RRSP room</span><span id="rrsp-room">—</span></div>
+      <p>Based on your income, here's your RRSP impact for 2026.</p>
+      <div class="rrsp-stat"><span>Your 2026 RRSP room</span><span id="rrsp-room">—</span></div>
       <div class="rrsp-stat"><span>Tax saved by RRSP</span><span id="rrsp-tax-saved">—</span></div>
       <div class="rrsp-stat"><span>Max additional contribution</span><span id="rrsp-max">—</span></div>
     </div>
@@ -253,11 +253,11 @@ footer a { color: #8A9BB0; text-decoration: none; }
 <div class="ad-slot"><div class="ad-inner">📢 Advertisement — Google AdSense 970×90</div></div>
 
 <footer>
-  <p>TaxClear uses 2024 federal and provincial tax brackets for estimation purposes only. This is not tax advice. Consult a CPA for your actual return. | <a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a></p>
+  <p>TaxClear uses 2026 federal and provincial tax brackets for estimation purposes only. This is not tax advice. Consult a CPA for your actual return. | <a href="#">Privacy Policy</a> | <a href="#">Disclaimer</a></p>
 </footer>
 
 <script>
-// 2024 Federal brackets (approximate)
+// 2026 Federal brackets (approximate)
 const FED_BRACKETS = [
   { min: 0, max: 55867, rate: 0.15 },
   { min: 55867, max: 111733, rate: 0.205 },
@@ -315,9 +315,9 @@ function calculateTax() {
   const totalDeductions = rrsp + dues + childcare + moving;
   const netIncome = Math.max(0, totalIncome - totalDeductions);
 
-  // CPP 2024: 5.95% on earnings between $3,500 and $68,500
+  // CPP 2026: 5.95% on earnings between $3,500 and $68,500
   const cpp = Math.min(Math.max(employ - 3500, 0), 68500 - 3500) * 0.0595;
-  // EI 2024: 1.66% on insurable earnings up to $63,200
+  // EI 2026: 1.66% on insurable earnings up to $63,200
   const ei = Math.min(employ, 63200) * 0.0166;
 
   // Federal tax

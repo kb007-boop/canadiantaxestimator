@@ -1,4 +1,4 @@
-/* TaxClear Canada — Shared Tax Logic (2024) */
+/* TaxClear Canada — Shared Tax Logic (2026) */
 
 const FED_BRACKETS = [
   { min: 0,      max: 55867,   rate: 0.15  },
@@ -8,7 +8,7 @@ const FED_BRACKETS = [
   { min: 220000, max: Infinity,rate: 0.33  }
 ];
 const FED_BPA        = 15705;
-const RRSP_MAX_2024  = 31560;
+const RRSP_MAX_2026  = 31560;
 const CPP_RATE       = 0.0595;
 const CPP_MIN        = 3500;
 const CPP_MAX_EARN   = 68500;
@@ -95,7 +95,7 @@ function calcTax({ province, employment=0, selfEmployment=0, investment=0, capit
   const fedMarginal  = getMarginal(netIncome, FED_BRACKETS);
   const provMarginal = getMarginal(netIncome, p.brackets);
   const marginalRate = fedMarginal + provMarginal;
-  const rrspRoom    = Math.min(totalIncome * 0.18, RRSP_MAX_2024);
+  const rrspRoom    = Math.min(totalIncome * 0.18, RRSP_MAX_2026);
   const rrspSaved   = rrsp * marginalRate;
   const rrspRemain  = Math.max(0, rrspRoom - rrsp);
   return {
