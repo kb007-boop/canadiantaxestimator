@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Canadian Provincial Income Tax 2024 | All 10 Provinces | TaxClear</title>
+<meta name="description" content="Compare income tax across all 10 Canadian provinces for 2024. Interactive income slider shows total tax, effective rate, after-tax income, and marginal rate for every province side by side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://canadiantaxestimator.com/compare-provinces-tax">
+<meta property="og:type" content="website"><meta property="og:url" content="https://canadiantaxestimator.com/compare-provinces-tax"><meta property="og:title" content="Compare Province Income Tax 2024 Canada | TaxClear"><meta property="og:description" content="Side-by-side income tax comparison for all 10 Canadian provinces. Adjust income with a slider and see every province ranked."><meta property="og:site_name" content="TaxClear Canada"><meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Compare Province Income Tax 2024 | TaxClear"><meta name="twitter:description" content="Side-by-side income tax comparison for all 10 provinces. Adjust income and see rankings.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Compare Canadian Provincial Income Tax 2024","url":"https://canadiantaxestimator.com/compare-provinces-tax","description":"Interactive 2024 income tax comparison tool for all 10 Canadian provinces. Adjust your income to see total tax, effective rate, and after-tax income for every province.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"CAD"},"provider":{"@type":"Organization","name":"TaxClear Canada","url":"https://canadiantaxestimator.com/"}}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8432005917797170" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.compare-page { max-width: 1100px; margin: 0 auto; padding: 0 20px 64px; }
+.best-prov-banner { background: linear-gradient(135deg, var(--green), #166534); color: white; border-radius: 16px; padding: 20px 28px; margin: 32px 0 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.best-prov-banner h3 { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+.best-prov-banner .bp-val { font-family: 'Syne', sans-serif; font-size: 26px; font-weight: 800; }
+.sort-controls { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+.sort-controls span { font-size: 13px; color: var(--muted); }
+.sort-btn { padding: 6px 14px; border-radius: 8px; border: 1.5px solid var(--border); background: white; font-size: 13px; font-weight: 600; cursor: pointer; color: var(--navy); font-family: 'Source Sans 3', sans-serif; transition: all 0.2s; }
+.sort-btn.active, .sort-btn:hover { border-color: var(--maple); color: var(--maple); background: rgba(209,54,47,0.04); }
+.bar-chart { display: flex; flex-direction: column; gap: 6px; margin-bottom: 32px; }
+.bar-row { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.bar-prov { min-width: 140px; font-weight: 600; color: var(--navy); }
+.bar-track { flex: 1; background: var(--surface); border-radius: 4px; height: 24px; overflow: hidden; cursor: default; }
+.bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--slate), var(--maple)); transition: width 0.5s ease; display: flex; align-items: center; padding-left: 8px; }
+.bar-fill.best-fill { background: linear-gradient(90deg, var(--green), #4ADE80); }
+.bar-label { font-size: 12px; font-weight: 700; color: white; white-space: nowrap; }
+.bar-side { min-width: 80px; text-align: right; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header><nav aria-label="Main navigation"><a href="/" class="logo"><span class="maple-leaf" aria-hidden="true">🍁</span>TaxClear Canada</a><div class="nav-links" id="nav-links"><div class="nav-dropdown"><button class="nav-dropdown-btn">Tools ▾</button><div class="nav-dropdown-menu"><span class="menu-label">Calculators</span><a href="/">Income Tax Calculator</a><a href="/rrsp-calculator.html">RRSP Calculator</a><a href="/capital-gains-tax-calculator.html">Capital Gains Calculator</a><a href="/cpp-ei-calculator.html">CPP &amp; EI Calculator</a><a href="/salary-vs-dividend-calculator.html">Salary vs. Dividend</a></div></div><div class="nav-dropdown"><button class="nav-dropdown-btn">Provinces ▾</button><div class="nav-dropdown-menu"><a href="/ontario-income-tax-calculator.html">Ontario</a><a href="/bc-income-tax-calculator.html">British Columbia</a><a href="/alberta-income-tax-calculator.html">Alberta</a><a href="/quebec-income-tax-calculator.html">Québec</a><a href="/saskatchewan-income-tax-calculator.html">Saskatchewan</a><a href="/manitoba-income-tax-calculator.html">Manitoba</a><a href="/nova-scotia-income-tax-calculator.html">Nova Scotia</a><a href="/new-brunswick-income-tax-calculator.html">New Brunswick</a><a href="/newfoundland-income-tax-calculator.html">Newfoundland &amp; Labrador</a><a href="/pei-income-tax-calculator.html">Prince Edward Island</a></div></div><div class="nav-dropdown"><button class="nav-dropdown-btn">Resources ▾</button><div class="nav-dropdown-menu"><a href="/canadian-tax-brackets-2024.html">2024 Tax Brackets</a><a href="/compare-provinces-tax.html">Compare Provinces</a></div></div></div><button class="nav-mobile-toggle" onclick="document.getElementById('nav-links').classList.toggle('open')" aria-label="Toggle navigation">☰</button></nav></header>
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><span>Compare Provinces</span></nav>
+<div class="hero">
+  <p class="hero-eyebrow">2024 · All 10 Provinces · Employment Income</p>
+  <h1>Compare Province Income Tax <span>2024</span></h1>
+  <p>Drag the slider to your income. Instantly see total tax, effective rate, and after-tax income for every Canadian province, ranked lowest to highest.</p>
+</div>
+<div class="income-control">
+  <div class="income-control-inner">
+    <h2>Annual Income</h2>
+    <p>Move the slider to see how your income is taxed across all provinces</p>
+    <div class="income-display" id="income-display">$100,000</div>
+    <input type="range" class="income-slider" id="income-slider" min="20000" max="350000" step="5000" value="100000" oninput="updateAll()">
+    <div style="display:flex;justify-content:space-between;color:#8A9BB0;font-size:12px;margin-top:4px"><span>$20K</span><span>$350K</span></div>
+  </div>
+</div>
+<main>
+<div class="compare-page">
+  <div class="best-prov-banner">
+    <div><h3>Lowest Tax Province</h3><div class="bp-val" id="best-prov-name">Alberta</div><div style="font-size:13px;color:rgba(255,255,255,0.7)" id="best-prov-sub">—</div></div>
+    <div><h3>Tax Savings vs Highest</h3><div class="bp-val" id="best-prov-savings">—</div></div>
+    <a id="best-prov-link" href="/alberta-income-tax-calculator.html" class="share-btn" style="background:white;color:var(--green);border-color:white">Calculate for this province →</a>
+  </div>
+  <div class="sort-controls">
+    <span>Sort by:</span>
+    <button class="sort-btn active" onclick="sortBy('total')" id="sort-total">Total Tax ↑</button>
+    <button class="sort-btn" onclick="sortBy('effective')" id="sort-effective">Effective Rate</button>
+    <button class="sort-btn" onclick="sortBy('aftertax')" id="sort-aftertax">After-Tax Income</button>
+    <button class="sort-btn" onclick="sortBy('marginal')" id="sort-marginal">Marginal Rate</button>
+  </div>
+  <div class="bar-chart" id="bar-chart"></div>
+  <div class="compare-wrap">
+    <table class="compare-table" id="compare-table">
+      <thead>
+        <tr>
+          <th onclick="sortBy('name')">Province</th>
+          <th onclick="sortBy('total')">Total Tax</th>
+          <th onclick="sortBy('effective')">Effective Rate</th>
+          <th onclick="sortBy('aftertax')">After-Tax Income</th>
+          <th onclick="sortBy('marginal')">Marginal Rate</th>
+          <th>Calculator</th>
+        </tr>
+      </thead>
+      <tbody id="compare-tbody"></tbody>
+    </table>
+  </div>
+</div>
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2>Compare Provinces — FAQ</h2>
+    <div class="faq-item"><h3>Which Canadian province has the lowest income tax?</h3><p><strong>Alberta</strong> has the lowest income tax for most income levels. It has the highest basic personal amount ($21,003), starts at a flat 10% rate on the first $148,269 of income, and has no provincial sales tax. At $100,000, Albertans pay roughly $5,000–$7,000 less in tax than high-tax provinces like Nova Scotia or Newfoundland.</p></div>
+    <div class="faq-item"><h3>Which province has the highest income tax?</h3><p><strong>Newfoundland &amp; Labrador</strong> has the highest top combined marginal rate in Canada at 54.8%, followed closely by Nova Scotia at 54%. For middle incomes around $80,000–$120,000, Quebec often has the highest combined rates due to its provincial tax structure (though it offers more subsidized services in return).</p></div>
+    <div class="faq-item"><h3>How much tax do I save by living in Alberta vs Ontario?</h3><p>At $100,000 income, an Albertan pays approximately $5,500–$6,000 less in income tax than an Ontarian. At $200,000, the gap widens to approximately $12,000–$15,000 annually. However, Alberta has higher property taxes and municipal fees in some areas, and Ontario residents may benefit from subsidized services that offset some of the tax difference.</p></div>
+    <div class="faq-item"><h3>Does CPP and EI affect province comparisons?</h3><p>This comparison shows <strong>provincial + federal income tax only</strong>. CPP (5.95% on earnings $3,500–$68,500) and EI (1.66% on earnings up to $63,200) are the <strong>same for all provinces</strong> — they are federal programs. Use our <a href="/cpp-ei-calculator.html">CPP &amp; EI calculator</a> to see those deductions separately.</p></div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-links"><a href="/">Tax Calculator</a><a href="/rrsp-calculator.html">RRSP</a><a href="/capital-gains-tax-calculator.html">Capital Gains</a><a href="/cpp-ei-calculator.html">CPP &amp; EI</a><a href="/salary-vs-dividend-calculator.html">Salary vs. Dividend</a><a href="/canadian-tax-brackets-2024.html">2024 Brackets</a><a href="/compare-provinces-tax.html">Compare Provinces</a></div><div class="footer-links"><a href="/ontario-income-tax-calculator.html">Ontario</a><a href="/bc-income-tax-calculator.html">BC</a><a href="/alberta-income-tax-calculator.html">Alberta</a><a href="/quebec-income-tax-calculator.html">Québec</a><a href="/saskatchewan-income-tax-calculator.html">Saskatchewan</a><a href="/manitoba-income-tax-calculator.html">Manitoba</a><a href="/nova-scotia-income-tax-calculator.html">Nova Scotia</a><a href="/new-brunswick-income-tax-calculator.html">New Brunswick</a><a href="/newfoundland-income-tax-calculator.html">Newfoundland</a><a href="/pei-income-tax-calculator.html">PEI</a></div><p>TaxClear uses 2024 federal and provincial tax brackets for estimation purposes only. This is not tax advice.</p><p>© 2024 TaxClear Canada &nbsp;·&nbsp; <a href="/">canadiantaxestimator.com</a> &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p></footer>
+<script src="/taxcalc.js"></script>
+<script>
+const PROVINCE_LINKS = {
+  ON:'/ontario-income-tax-calculator.html', BC:'/bc-income-tax-calculator.html',
+  AB:'/alberta-income-tax-calculator.html', QC:'/quebec-income-tax-calculator.html',
+  SK:'/saskatchewan-income-tax-calculator.html', MB:'/manitoba-income-tax-calculator.html',
+  NS:'/nova-scotia-income-tax-calculator.html', NB:'/new-brunswick-income-tax-calculator.html',
+  NL:'/newfoundland-income-tax-calculator.html', PE:'/pei-income-tax-calculator.html'
+};
+let currentSort = 'total';
+
+function calcAll(income) {
+  return Object.entries(PROV_DATA).map(([abbr, pd]) => {
+    const r = calcTax({ province: abbr, employment: income });
+    return {
+      abbr, name: pd.name,
+      total: r.fedTax + r.provTax,
+      effective: r.effectiveRate,
+      aftertax: r.afterTax,
+      marginal: r.marginalRate
+    };
+  });
+}
+
+function sortBy(key) {
+  currentSort = key;
+  document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('sort-' + key) || document.querySelector('[onclick="sortBy(\'' + key + '\')"]');
+  if (btn) btn.classList.add('active');
+  updateAll();
+}
+
+function updateAll() {
+  const income = +document.getElementById('income-slider').value;
+  document.getElementById('income-display').textContent = fmt(income);
+  const data = calcAll(income);
+  const sorted = [...data].sort((a, b) => {
+    if (currentSort === 'aftertax' || currentSort === 'name') return a[currentSort] > b[currentSort] ? -1 : 1;
+    return a[currentSort] - b[currentSort];
+  });
+  const best = sorted[0];
+  const worst = sorted[sorted.length - 1];
+  document.getElementById('best-prov-name').textContent = best.name;
+  document.getElementById('best-prov-sub').textContent = fmt(best.total) + ' total tax · ' + fmtPct(best.effective) + ' effective rate';
+  document.getElementById('best-prov-savings').textContent = fmt(worst.total - best.total);
+  document.getElementById('best-prov-link').href = PROVINCE_LINKS[best.abbr];
+  const maxTax = Math.max(...data.map(d => d.total));
+  document.getElementById('bar-chart').innerHTML = sorted.map((d, i) => {
+    const pct = (d.total / maxTax * 100).toFixed(1);
+    const isBest = i === 0 && currentSort !== 'aftertax';
+    return `<div class="bar-row"><div class="bar-prov">${d.name}</div><div class="bar-track"><div class="bar-fill${isBest?' best-fill':''}" style="width:${pct}%"><span class="bar-label">${fmtK(d.total)}</span></div></div><div class="bar-side">${fmtPct(d.effective)}</div></div>`;
+  }).join('');
+  document.getElementById('compare-tbody').innerHTML = sorted.map((d, i) => {
+    const isBest = i === 0;
+    return `<tr${isBest?' class="best"':''}><td>${d.name}</td><td>${fmt(d.total)}</td><td>${fmtPct(d.effective)}</td><td>${fmt(d.aftertax)}</td><td>${fmtPct(d.marginal)}</td><td><a href="${PROVINCE_LINKS[d.abbr]}" style="color:var(--maple);font-weight:600;text-decoration:none;font-size:13px">Calculate →</a></td></tr>`;
+  }).join('');
+}
+updateAll();
+</script>
+</body></html>
